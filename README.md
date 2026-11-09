@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# my-web-fe
+
+My personal portfolio website, built with **Next.js, React, and TypeScript**. It showcases my projects, skills, experience, and education.
+
+Portfolio content is managed through **Contentful CMS**. Contact messages and the admin dashboard will connect to a separate Express backend: `my-web-be`.
+
+## Tech Stack
+
+- **Frontend:** Next.js (App Router), React, TypeScript
+- **Content:** Contentful CMS
+- **Styling:** Bootstrap, Sass, light/dark themes
+- **Backend:** Separate Node.js/Express API (`my-web-be`)
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and start the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+For Contentful integration, create a `.env.local` file with the required environment variables. Keep API tokens server-side and never commit `.env.local`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+- `src/app/` — Pages and routes
+- `src/components/` — Reusable UI components and portfolio sections
+- `src/lib/contentful/` — Contentful data fetching
+- `src/lib/api/` — Communication with the Express backend
+- `src/styles/` — Global styles and themes
+- `public/` — Static assets
 
-To learn more about Next.js, take a look at the following resources:
+## Project Plan
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The website will include a responsive portfolio, Contentful-managed content, a contact form, and a protected admin dashboard for managing messages.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deployment and Google Analytics will be added later.
 
-## Deploy on Vercel
+## Architecture
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For the complete architecture, planned folder structure, and individual file responsibilities, see the [Frontend Architecture Document](https://github.com/ShivamGlotra/my-web-fe/blob/main/my-web-architecture-prototype.md).
