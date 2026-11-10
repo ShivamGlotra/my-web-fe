@@ -224,12 +224,10 @@ Only create fields that the current design needs. Preview, webhooks, type genera
 Create a local `.env.local` using `.env.example` as a guide:
 
 ```dotenv
-# Keep these on the Next.js server. Never prefix them NEXT_PUBLIC_.
 CONTENTFUL_SPACE_ID=
 CONTENTFUL_DELIVERY_TOKEN=
 CONTENTFUL_ENVIRONMENT=master
 
-# Public URLs are safe to expose.
 NEXT_PUBLIC_API_BASE_URL=http://localhost:4000
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
