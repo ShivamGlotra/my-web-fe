@@ -22,11 +22,7 @@ const LABELS: Record<ThemePreferences, string> = {
 };
 
 export const ThemeToggle = () => {
-  const themePreference = useSyncExternalStore(
-    subscribeToThemeChanges,
-    getStoredThemePreference,
-    () => null,
-  );
+  const themePreference = useSyncExternalStore(subscribeToThemeChanges, getStoredThemePreference, () => null);
 
   const label = themePreference
     ? `Theme: ${LABELS[themePreference]}. Switch to ${NEXT[themePreference]}`
