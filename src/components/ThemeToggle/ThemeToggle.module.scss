@@ -21,9 +21,9 @@
   display: none;
 }
 
-:global([data-theme-preference="light"]) .light,
-:global([data-theme-preference="dark"]) .dark,
-:global([data-theme-preference="system"]) .system,
-:global(html:not([data-theme-preference])) .system {
+html[data-theme-preference="light"] .light,
+html[data-theme-preference="dark"] .dark,
+html[data-theme-preference="system"] .system,
+html:not([data-theme-preference]) .system {
   display: block;
 }
