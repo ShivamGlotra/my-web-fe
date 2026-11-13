@@ -20,7 +20,6 @@ const nextConfig: NextConfig = {
       "global-builtin", // mix(), unit() and friends
       "color-functions", // red(), green(), blue()
       "if-function",
-      "mixed-decls",
     ],
   },
 };

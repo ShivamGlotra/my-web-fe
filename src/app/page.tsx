@@ -1,6 +1,9 @@
+import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
+
 const Page = () => {
   return (
     <main className="container py-5">
+      <ThemeToggle />
       <h1>BootStrap Test</h1>
       <p className="text-secondary">
         Muted text and a <a href="#">link</a>.

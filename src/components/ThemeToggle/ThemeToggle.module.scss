@@ -1,0 +1,29 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem; // 44px touch target size
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  background: transparent;
+  color: var(--bs-body-color);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--bs-secondary-bg);
+  }
+}
+
+// Hiding the icons and only showing the one that matches the current theme
+.icon {
+  display: none;
+}
+
+html[data-theme-preference="light"] .light,
+html[data-theme-preference="dark"] .dark,
+html[data-theme-preference="system"] .system,
+html:not([data-theme-preference]) .system {
+  display: block;
+}
