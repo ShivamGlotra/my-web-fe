@@ -1,0 +1,22 @@
+.text {
+  margin: 0;
+}
+
+.lead {
+  font-size: 1.125rem; // 18px
+  line-height: 1.6;
+}
+
+.body {
+  font-size: 1rem; // 16px
+  line-height: 1.6;
+}
+
+.small {
+  font-size: 0.875rem; // 14px
+  line-height: 1.5;
+}
+
+.muted {
+  color: var(--bs-secondary-color);
+}

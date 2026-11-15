@@ -23,6 +23,7 @@ type HHeadingProps = {
 
 export const Heading = ({ level, size = DEfAULT_HEADING_SIZE[level], id, className, children }: HHeadingProps) => {
   const HeadingTag = `h${level}` as const;
+  console.log("Heading Styles:", styles);
   const classes = [styles.heading, styles[size], className].filter(Boolean).join(" ");
 
   return (
