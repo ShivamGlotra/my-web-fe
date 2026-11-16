@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { Heading } from "@/components/Heading";
 import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 import { Text } from "@/components/Text";
+import { Link } from "@/components/Link";
 
 export const metadata = { robots: { index: false } };
 
@@ -41,6 +42,26 @@ export default function ShowcasePage() {
           Toronto, ON
         </Text>{" "}
         and open to new roles.
+      </Text>
+      <hr />
+
+      <Text>
+        Internal: <Link href="/">Back to home</Link>
+      </Text>
+      <Text>
+        Section: <Link href="#top">Jump to top</Link>
+      </Text>
+      <Text>
+        External: <Link href="https://github.com/ShivamGlotra">GitHub</Link>
+      </Text>
+      <Text>
+        Email: <Link href="mailto:you@example.com">Email me</Link>
+      </Text>
+      <Text>
+        File: <Link href="/cv.pdf">My CV (PDF)</Link>
+      </Text>
+      <Text size="small" muted>
+        Inside small muted text: <Link href="/">a link</Link>
       </Text>
     </main>
   );
