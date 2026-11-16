@@ -38,7 +38,7 @@ export const ThemeToggle = () => {
     >
       <SunIcon className={`${styles.icon} ${styles.light}`} />
       <MoonIcon className={`${styles.icon} ${styles.dark}`} />
-      <MonitorIcon className={`${styles.icon} ${styles.system}`} />{" "}
+      <MonitorIcon className={`${styles.icon} ${styles.system}`} />
     </button>
   );
 };

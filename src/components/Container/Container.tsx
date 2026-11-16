@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import styles from "./Container.module.css";
+import styles from "./Container.module.scss";
 
 type ContainerProps = {
   // Size for the container | In our case its 1200px default content width and 720px for narrow content width

@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
+import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
-import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
-import { Text } from "@/components/Text";
 import { Link } from "@/components/Link";
+import { Section } from "@/components/Section";
+import { Text } from "@/components/Text";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const metadata = { robots: { index: false } };
 
@@ -10,59 +12,60 @@ export default function ShowcasePage() {
   if (process.env.NODE_ENV === "production") notFound();
 
   return (
-    <main style={{ padding: "2rem", display: "grid", gap: "1.5rem" }}>
-      <ThemeToggle />
+    <main id="top">
+      <Section>
+        <ThemeToggle />
+        <Heading level={1}>Component showcase</Heading>
+      </Section>
 
-      <Heading level={1}>Shivam Glotra (h1, display)</Heading>
-      <Heading level={2}>About me (h2, xl)</Heading>
-      <Heading level={2} size="lg">
-        Smaller section title (h2, lg)
-      </Heading>
-      <Heading level={3}>Weather Wise (h3, md)</Heading>
-      <Heading level={4}>Card detail (h4, sm)</Heading>
-      <Heading level={2} size="sm" id="footer-links">
-        Quick links (h2, sm: small but semantically h2)
-      </Heading>
-      <Heading level={2}>
-        A long heading that wraps across two lines to show how text-wrap balance evens out the lines
-      </Heading>
-      <hr />
+      <Section id="headings" title="Headings" intro="Semantic level is separate from visual size.">
+        <Heading level={3}>h3 at default size (md)</Heading>
+        <Heading level={3} size="lg">
+          h3 at size lg
+        </Heading>
+        <Heading level={4}>h4 at default size (sm)</Heading>
+      </Section>
 
-      <Text size="lead">Lead: I&apos;m a third-year Computer Science student at York University.</Text>
-      <Text>Body: I build web and mobile apps with React, Next.js and Flutter.</Text>
-      <Text muted>Body muted: Toronto, ON</Text>
-      <Text size="small">Small: 2023 to present</Text>
-      <Text size="small" muted>
-        Small muted: © 2026 Shivam Glotra
-      </Text>
+      <Section id="text" title="Text" intro="Sizes and muted combine freely." tinted>
+        <Text size="lead">Lead: I&apos;m a third-year Computer Science student at York.</Text>
+        <Text>Body: I build web and mobile apps with React, Next.js and Flutter.</Text>
+        <Text muted>Body muted: Toronto, ON</Text>
+        <Text size="small" muted>
+          Small muted: © 2026 Shivam Glotra
+        </Text>
+        <Text>
+          Inline: based in{" "}
+          <Text element="span" muted>
+            Toronto
+          </Text>{" "}
+          and open to new roles.
+        </Text>
+      </Section>
 
-      <Text>
-        Inline usage: Based in{" "}
-        <Text element="span" muted>
-          Toronto, ON
-        </Text>{" "}
-        and open to new roles.
-      </Text>
-      <hr />
+      <Section id="links" title="Links">
+        <Text>
+          Internal: <Link href="/">Home</Link>
+        </Text>
+        <Text>
+          Section: <Link href="#top">Back to top</Link>
+        </Text>
+        <Text>
+          External: <Link href="https://github.com/ShivamGlotra">GitHub</Link>
+        </Text>
+        <Text>
+          File: <Link href="/cv.pdf">CV (PDF)</Link>
+        </Text>
+      </Section>
 
-      <Text>
-        Internal: <Link href="/">Back to home</Link>
-      </Text>
-      <Text>
-        Section: <Link href="#top">Jump to top</Link>
-      </Text>
-      <Text>
-        External: <Link href="https://github.com/ShivamGlotra">GitHub</Link>
-      </Text>
-      <Text>
-        Email: <Link href="mailto:you@example.com">Email me</Link>
-      </Text>
-      <Text>
-        File: <Link href="/cv.pdf">My CV (PDF)</Link>
-      </Text>
-      <Text size="small" muted>
-        Inside small muted text: <Link href="/">a link</Link>
-      </Text>
+      <Section id="containers" title="Containers" tinted>
+        <Text>The default container is 1200px. This text sits inside it.</Text>
+      </Section>
+      <Container size="narrow">
+        <Text>
+          This is the narrow container (720px), for long-form pages like Privacy. Lines stay at a comfortable reading
+          length even on a wide screen.
+        </Text>
+      </Container>
     </main>
   );
 }
