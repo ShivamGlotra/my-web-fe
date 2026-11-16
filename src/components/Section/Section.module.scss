@@ -1,0 +1,14 @@
+.section {
+  padding-block: clamp(4rem, 2.5rem + 5vw, 7rem);
+}
+
+.tinted {
+  background-color: var(--bs-secondary-bg);
+}
+
+.header {
+  display: grid;
+  gap: 1rem;
+  max-width: 45rem;
+  margin-bottom: clamp(2rem, 1.5rem + 2vw, 3rem);
+}

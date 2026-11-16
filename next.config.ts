@@ -4,14 +4,6 @@ const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
-  },
   // Hack to silence deprecation warnings from Sass
   sassOptions: {
     quietDeps: true, // hides warnings from node_modules (Bootstrap's own files)
