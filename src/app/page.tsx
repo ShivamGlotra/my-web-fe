@@ -1,3 +1,4 @@
+import { Button } from "@/components/Button/Button";
 import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 
 const Page = () => {
@@ -14,6 +15,8 @@ const Page = () => {
       </div>
       <div className="card p-3 mb-4">A card</div>
       <input className="form-control" placeholder="Input" />
+      <div className="d-flex gap-2 mt-4"></div>
+      <Button href="/showcase">Button to showcase</Button>
     </main>
   );
 };
