@@ -5,6 +5,11 @@ import { Link } from "@/components/Link";
 import { Section } from "@/components/Section";
 import { Text } from "@/components/Text";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Button } from "@/components/Button";
+import { Card } from "@/components/Card";
+import { Icon } from "@/components/Icon";
+import { TagList } from "@/components/Tag";
+import { Badge } from "@/components/Badge";
 
 export const metadata = { robots: { index: false } };
 
@@ -66,6 +71,53 @@ export default function ShowcasePage() {
           length even on a wide screen.
         </Text>
       </Container>
+
+      <Section id="buttons" title="Buttons" tinted>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
+          <Button href="#projects" iconEnd="arrowRight">
+            View my work
+          </Button>
+          <Button href="/cv.pdf" variant="secondary" iconStart="download" download>
+            Download CV
+          </Button>
+          <Button href="https://github.com/ShivamGlotra" variant="secondary">
+            GitHub
+          </Button>
+          <Button size="sm">Small button</Button>
+          <Button disabled>Disabled</Button>
+          <Button loading>Sending…</Button>
+        </div>
+      </Section>
+
+      <Section id="cards" title="Cards, tags and badges">
+        <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill, minmax(18rem, 1fr))" }}>
+          <Card type="article">
+            <div style={{ display: "grid", gap: "0.75rem" }}>
+              <Badge tone="success">In progress</Badge>
+              <Heading level={3}>Weather Wise</Heading>
+              <Text muted>A Flutter weather app with offline caching.</Text>
+              <TagList label="Technologies" tags={["Flutter", "Dart", "REST APIs"]} />
+              <Button href="/projects/weather-wise" size="sm" variant="secondary" iconEnd="arrowRight">
+                View project
+              </Button>
+            </div>
+          </Card>
+          <Card padding="lg">
+            <div style={{ display: "grid", gap: "0.75rem" }}>
+              <Badge tone="accent">Featured</Badge>
+              <Badge>Neutral</Badge>
+              <Text>Large padding card</Text>
+            </div>
+          </Card>
+        </div>
+      </Section>
+
+      <Section id="icons" title="Icons">
+        <Text>
+          <Icon name="mail" /> <Icon name="check" /> <Icon name="warning" /> <Icon name="menu" /> <Icon name="close" />{" "}
+          <Icon name="sun" /> <Icon name="moon" /> <Icon name="monitor" />
+        </Text>
+      </Section>
     </main>
   );
 }

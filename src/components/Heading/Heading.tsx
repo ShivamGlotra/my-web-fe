@@ -13,7 +13,7 @@ const DEfAULT_HEADING_SIZE: Record<HeadingLevel, HeadingSize> = {
   6: "sm",
 };
 
-type HHeadingProps = {
+type HeadingProps = {
   level: HeadingLevel; // level of the heading (1-6)
   size?: HeadingSize;
   id?: string; // optional id for the heading needed for anchor links
@@ -21,9 +21,8 @@ type HHeadingProps = {
   children: ReactNode;
 };
 
-export const Heading = ({ level, size = DEfAULT_HEADING_SIZE[level], id, className, children }: HHeadingProps) => {
+export const Heading = ({ level, size = DEfAULT_HEADING_SIZE[level], id, className, children }: HeadingProps) => {
   const HeadingTag = `h${level}` as const;
-  console.log("Heading Styles:", styles);
   const classes = [styles.heading, styles[size], className].filter(Boolean).join(" ");
 
   return (
