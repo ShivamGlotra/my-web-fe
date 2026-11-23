@@ -15,6 +15,7 @@ type WithTitleProps = BaseSectionProps & {
   title: string;
   // Rquired with a title, for anchor links and aria-labels
   id: string;
+  eyebrow?: string;
   intro?: ReactNode;
 };
 
@@ -26,7 +27,7 @@ type WithoutTitleProps = BaseSectionProps & {
 
 type SectionProps = WithTitleProps | WithoutTitleProps;
 
-export const Section = ({ id, title, intro, tinted = false, className, children }: SectionProps) => {
+export const Section = ({ id, title, intro, tinted = false, eyebrow, className, children }: SectionProps) => {
   const headingId = title ? `${id}-heading` : undefined;
   const classes = [styles.section, tinted && styles.tinted, className].filter(Boolean).join(" ");
 
@@ -35,9 +36,16 @@ export const Section = ({ id, title, intro, tinted = false, className, children 
       <Container>
         {title && (
           <header className={styles.header}>
-            <Heading level={2} id={headingId}>
-              {title}
-            </Heading>
+            <hgroup className={styles.titleGroup}>
+              {eyebrow && (
+                <Text size="label" accent>
+                  {eyebrow}
+                </Text>
+              )}
+              <Heading level={2} id={headingId}>
+                {title}
+              </Heading>
+            </hgroup>
             {intro && (
               <Text size="lead" muted>
                 {" "}

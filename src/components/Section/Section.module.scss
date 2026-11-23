@@ -12,3 +12,9 @@
   max-width: 45rem;
   margin-bottom: clamp(2rem, 1.5rem + 2vw, 3rem);
 }
+
+.titleGroup {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
