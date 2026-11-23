@@ -10,11 +10,20 @@ import { Card } from "@/components/Card";
 import { Icon } from "@/components/Icon";
 import { TagList } from "@/components/Tag";
 import { Badge } from "@/components/Badge";
+import { getEducation, getExperience, getProjects } from "@/lib/contentful";
+import { CATEGORY_LABELS, formatDateRange, formatYearMonth } from "@/lib/contentful/format";
 
 export const metadata = { robots: { index: false } };
 
-export default function ShowcasePage() {
+const ShowcasePage = async () => {
   if (process.env.NODE_ENV === "production") notFound();
+
+  const [projects, experience, education] = await Promise.all([getProjects(), getExperience(), getEducation()]);
+
+  const counts = projects.reduce<Record<string, number>>((acc, project) => {
+    acc[project.category] = (acc[project.category] ?? 0) + 1;
+    return acc;
+  }, {});
 
   return (
     <main id="top">
@@ -118,6 +127,33 @@ export default function ShowcasePage() {
           <Icon name="sun" /> <Icon name="moon" /> <Icon name="monitor" />
         </Text>
       </Section>
+
+      <Section id="data" title="Contentful data" tinted>
+        <Text>
+          {projects.length} projects. Counts by category: {JSON.stringify(counts)}{" "}
+        </Text>
+        {experience.map((job) => (
+          <Text key={job.id}>
+            {job.role} at {job.company} ({formatDateRange(job.start, job.end)})
+          </Text>
+        ))}
+        {projects.map((p) => (
+          <Text key={p.slug} size="small" muted>
+            {p.title} · {CATEGORY_LABELS[p.category]}
+            {p.date ? ` · ${formatYearMonth(p.date)}` : ""}
+          </Text>
+        ))}
+        {education.map((item) => (
+          <Text key={item.id} size="small">
+            {item.title}:{" "}
+            {item.kind === "degree"
+              ? `${formatDateRange(item.start, item.end)}, GPA ${item.gpa}`
+              : formatYearMonth(item.date)}
+          </Text>
+        ))}
+      </Section>
     </main>
   );
-}
+};
+
+export default ShowcasePage;
