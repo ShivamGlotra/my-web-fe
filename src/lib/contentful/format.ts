@@ -25,3 +25,27 @@ export const formatYearMonth = (value: YearMonth): string => {
 export const formatDateRange = (start: YearMonth, end: YearMonth | null): string => {
   return `${formatYearMonth(start)} – ${end ? formatYearMonth(end) : "present"}`;
 };
+
+export type ProjectGroup = "fullstack" | "other";
+
+export const PROJECT_GROUP: Record<ProjectCategory, ProjectGroup> = {
+  web: "fullstack",
+  mobile: "fullstack",
+  desktop: "other",
+  ml: "other",
+};
+
+export const PROJECT_GROUP_LABEL: Record<ProjectGroup, string> = {
+  fullstack: "Full-stack web and mobile",
+  other: "Data, desktop and AI",
+};
+
+/** ("2025-06", "2026-04") → "10 months". Finished roles only. */
+export function formatDuration(start: YearMonth, end: YearMonth): string {
+  const [sy, sm] = start.split("-").map(Number);
+  const [ey, em] = end.split("-").map(Number);
+  const months = (ey - sy) * 12 + (em - sm);
+  if (months < 12) return `${months} ${months === 1 ? "month" : "months"}`;
+  const years = Math.floor(months / 12);
+  return `${years} ${years === 1 ? "year" : "years"}`;
+}

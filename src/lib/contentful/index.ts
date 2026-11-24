@@ -5,6 +5,7 @@ import type {
   EducationItem,
   Experience,
   Hero,
+  Principle,
   Project,
   SiteSettings,
   SkillGroup,
@@ -12,34 +13,37 @@ import type {
 
 import * as data from "./placeholder-data";
 
-export async function getSiteSettings(): Promise<SiteSettings> {
+export const getSiteSettings = async (): Promise<SiteSettings> => {
   return data.siteSettings;
-}
+};
 
-export async function getHero(): Promise<Hero> {
+export const getHero = async (): Promise<Hero> => {
   return data.hero;
-}
+};
 
-export async function getAbout(): Promise<About> {
+export const getAbout = async (): Promise<About> => {
   return data.about;
-}
+};
 
-export async function getSkillGroups(): Promise<SkillGroup[]> {
+export const getSkillGroups = async (): Promise<SkillGroup[]> => {
   return data.skillGroups;
-}
+};
 
-export async function getProjects(): Promise<Project[]> {
+export const getProjects = async (): Promise<Project[]> => {
   return data.projects;
-}
+};
 
-export async function getExperience(): Promise<Experience[]> {
+export const getExperiences = async (): Promise<Experience[]> => {
   return data.experience;
-}
+};
 
-export async function getEducation(): Promise<EducationItem[]> {
+export const getEducation = async (): Promise<EducationItem[]> => {
   return data.education;
-}
+};
 
-export async function getContactContent(): Promise<ContactContent> {
+export const getContactContent = async (): Promise<ContactContent> => {
   return data.contact;
-}
+};
+export const getPrinciples = async (): Promise<Principle[]> => {
+  return data.principles;
+};
