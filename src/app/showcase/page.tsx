@@ -40,7 +40,7 @@ const ShowcasePage = async () => {
         <Heading level={4}>h4 at default size (sm)</Heading>
       </Section>
 
-      <Section id="text" title="Text" intro="Sizes and muted combine freely." tinted>
+      <Section id="text" title="Text" intro="Sizes and muted combine freely." tone="band">
         <Text size="lead">Lead: I&apos;m a third-year Computer Science student at York.</Text>
         <Text>Body: I build web and mobile apps with React, Next.js and Flutter.</Text>
         <Text muted>Body muted: Toronto, ON</Text>
@@ -71,7 +71,7 @@ const ShowcasePage = async () => {
         </Text>
       </Section>
 
-      <Section id="containers" title="Containers" tinted>
+      <Section id="containers" title="Containers" tone="band">
         <Text>The default container is 1200px. This text sits inside it.</Text>
       </Section>
       <Container size="narrow">
@@ -81,7 +81,7 @@ const ShowcasePage = async () => {
         </Text>
       </Container>
 
-      <Section id="buttons" title="Buttons" tinted>
+      <Section id="buttons" title="Buttons" tone="band">
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
           <Button href="#projects" iconEnd="arrowRight">
             View my work
@@ -128,7 +128,7 @@ const ShowcasePage = async () => {
         </Text>
       </Section>
 
-      <Section id="data" title="Contentful data" tinted>
+      <Section id="data" title="Contentful data" tone="band">
         <Text>
           {projects.length} projects. Counts by category: {JSON.stringify(counts)}{" "}
         </Text>
@@ -151,6 +151,34 @@ const ShowcasePage = async () => {
               : formatYearMonth(item.date)}
           </Text>
         ))}
+      </Section>
+
+      <Section
+        id="tones"
+        title="Deep section"
+        eyebrow="Section tones"
+        intro="Everything inside re-themes itself."
+        tone="deep"
+      >
+        <div style={{ display: "grid", gap: "1rem" }}>
+          <Text size="label" muted>
+            Web app · In progress · 29 commits
+          </Text>
+          <Text>
+            Body text with an <Link href="/">inline link</Link>.
+          </Text>
+          <Link href="/" variant="arrow">
+            View project
+          </Link>
+          <TagList label="Technologies" tags={["Next.js", "TypeScript", "PostgreSQL"]} />
+          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+            <Button href="#">Primary</Button>
+            <Button href="#" variant="secondary">
+              Secondary
+            </Button>
+          </div>
+          <Card>A card inside a deep section</Card>
+        </div>
       </Section>
     </main>
   );

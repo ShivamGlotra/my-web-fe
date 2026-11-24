@@ -6,7 +6,8 @@ import styles from "./Section.module.scss";
 
 type BaseSectionProps = {
   // A secondary bg to separate the sections
-  tinted?: boolean;
+  // tinted?: boolean;
+  tone?: "plain" | "band" | "deep";
   className?: string;
   children?: ReactNode;
 };
@@ -29,9 +30,9 @@ type WithoutTitleProps = BaseSectionProps & {
 
 type SectionProps = WithTitleProps | WithoutTitleProps;
 
-export const Section = ({ id, title, intro, tinted = false, eyebrow, className, children }: SectionProps) => {
+export const Section = ({ id, title, intro, tone = "deep", eyebrow, className, children }: SectionProps) => {
   const headingId = title ? `${id}-heading` : undefined;
-  const classes = [styles.section, tinted && styles.tinted, className].filter(Boolean).join(" ");
+  const classes = [styles.section, styles[tone], className].filter(Boolean).join(" ");
 
   return (
     <section id={id} className={classes} aria-labelledby={headingId}>
