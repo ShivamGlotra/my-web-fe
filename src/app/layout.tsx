@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Bricolage_Grotesque } from "next/font/google";
+import { Crimson_Pro, Montserrat } from "next/font/google";
 import "@/styles/main.scss";
 import { themeScript } from "@/lib/theme";
 
-const inter = Inter({
-  variable: "--font-inter",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const bricolageGrotesque = Bricolage_Grotesque({
-  variable: "--font-bricolage-grotesque",
-  weight: ["600"],
+const crimsonPro = Crimson_Pro({
+  variable: "--font-crimson",
+  weight: ["400"],
   display: "swap",
   subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${bricolageGrotesque.variable} h-full antialiased`}
+      className={`${montserrat.variable} ${crimsonPro.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

@@ -2,10 +2,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  min-height: 2.75rem;
-  font-weight: 600;
+  gap: 0.625rem;
+  min-height: 3.125rem;
+  padding-inline: 1.875rem;
   text-decoration: none;
+}
+
+:global(.btn-sm).button {
+  min-height: 2.75rem;
+  padding-inline: 1.125rem;
 }
 
 .spinner {

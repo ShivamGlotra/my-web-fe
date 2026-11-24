@@ -1,34 +1,28 @@
 .heading {
   margin: 0;
-  font-family: var(--font-bricolage), var(--font-inter), sans-serif;
-  font-weight: 600;
+  font-family: var(--font-crimson), Georgia, "Times New Roman", serif;
+  font-weight: 400;
   color: var(--bs-body-color);
   text-wrap: balance;
 }
 
 .display {
-  font-size: clamp(2.5rem, 1.5rem + 4vw, 4rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-}
-
+  font-size: clamp(2.625rem, 1.75rem + 3vw, 4rem);
+  line-height: 1.08;
+} // 42 → 64px
 .xl {
-  font-size: clamp(2rem, 1.5rem + 2vw, 2.75rem);
+  font-size: clamp(2.25rem, 1.75rem + 1.6vw, 3rem);
   line-height: 1.1;
-  letter-spacing: -0.015em;
-}
-
+} // 36 → 48px
 .lg {
-  font-size: clamp(1.5rem, 1.25rem + 1vw, 1.875rem);
-  line-height: 1.2;
-}
-
+  font-size: clamp(1.75rem, 1.5rem + 0.8vw, 2.125rem);
+  line-height: 1.15;
+} // 28 → 34px
 .md {
-  font-size: 1.25rem;
-  line-height: 1.3;
-}
-
+  font-size: 1.75rem;
+  line-height: 1.2;
+} // 28px
 .sm {
-  font-size: 1.0625rem;
-  line-height: 1.4;
-}
+  font-size: 1.375rem;
+  line-height: 1.25;
+} // 22px

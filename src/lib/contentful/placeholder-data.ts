@@ -7,6 +7,7 @@ import type {
   Project,
   SiteSettings,
   SkillGroup,
+  Principle,
 } from "@/types/content";
 
 export const siteSettings = {
@@ -14,7 +15,15 @@ export const siteSettings = {
   role: "Computer Science student · Full-stack developer",
   location: "Toronto, Canada",
   email: "shivam.glotra.43@gmail.com",
-  availability: { open: true, label: "Open to new opportunities" },
+  availability: { open: true, label: "Open to developer and co-op roles · Toronto or remote" },
+  affiliations: [
+    "goeasy",
+    "Soudelka Technologies",
+    "Connect2Network",
+    "York University",
+    "Sheridan College",
+    "Coursera",
+  ],
   cvUrl: "/cv.pdf",
   socialLinks: [
     { label: "GitHub", href: "https://github.com/ShivamGlotra" },
@@ -29,90 +38,70 @@ export const siteSettings = {
 } satisfies SiteSettings;
 
 export const hero = {
-  headline: "I build full-stack software across web, mobile and backend.",
+  eyebrow: "Full-stack developer · Computer Science at York",
+  headline: "I build software that holds up for the people using it.",
   intro:
-    "Third-year Computer Science student with three developer roles since 2025. I work with React, Next.js, Node.js, Flutter and PostgreSQL, and care about reliable, accessible products. I'm looking for my next role, so if you're hiring or have a project in mind, say hello.",
-  stats: [
-    { value: "3", label: "developer roles" },
-    { value: "12+", label: "REST APIs built" },
-    { value: "2", label: "certifications" },
-  ],
+    "Three developer roles since 2025 across web, mobile and backend. I work with React, Next.js, Node.js, Flutter and PostgreSQL, and I keep asking:",
+  question: "what does this need to do reliably, for everyone, before it ships?",
 } satisfies Hero;
 
+export const principles = [
+  {
+    title: "Start with the problem, not the stack",
+    description: "Ask who it is for and what has to be true when it works, before choosing tools.",
+  },
+  {
+    title: "Build from reusable components",
+    description: "Small, typed building blocks so features ship faster and stay consistent.",
+  },
+  {
+    title: "Test the paths people rely on",
+    description: "End-to-end tests with mocked APIs, so a release does not depend on luck.",
+  },
+  {
+    title: "Measure before optimising",
+    description: "Lighthouse before and after a change. Fix what the numbers show.",
+  },
+  {
+    title: "Communicate early and often",
+    description: "Restaurant floors taught me: say what is blocked before it becomes a problem.",
+  },
+] satisfies Principle[];
+
 export const about = {
-  lead: "I turn complex problems into working software, from full-stack web and mobile apps to backend systems and machine-learning pipelines.",
+  lead: "I'm a third-year Computer Science student at York University in Toronto. I turn complex problems into working software, from web and mobile apps to backend systems and machine-learning pipelines.",
   paragraphs: [
-    "I'm a third-year Computer Science student at York University. Outside coursework I learn by building: side projects, self-paced courses and hackathons.",
-    "Before software I led a 15-person restaurant team serving 100+ guests a day, which taught me to communicate and solve problems under pressure. I now bring that to collaborative engineering teams.",
-    "Next, I'm working on system design, cloud certifications (AWS and Azure) and contributing to open source.",
+    "Outside coursework I learn by building: side projects, self-paced courses and hackathons. Next, I'm working on system design, AWS and Azure certifications and open source.",
   ],
-  services: [
+  timeline: [
     {
-      title: "Web development",
-      description: "Responsive, accessible apps with React and Next.js, built from reusable components.",
+      label: "Restaurant manager · 2020 – present",
+      title: "Where I learned to lead a team",
+      body: "I led a 15-person team serving 100+ guests a day at Goa Farm Kitchen and VIBO, and improved efficiency by 10–15% through staffing and POS changes. It taught me to stay calm and communicate under pressure.",
     },
     {
-      title: "Mobile development",
-      description: "Cross-platform iOS and Android apps in Flutter, backed by Firebase.",
+      label: "Sheridan College · 2018 – 2019",
+      title: "Software Development Diploma",
+      body: "Java, JavaScript, C, C#, web programming and databases. GPA 3.76 / 4.",
     },
     {
-      title: "Backend and data",
-      description: "REST APIs with Node.js and Express on PostgreSQL, plus Python and Databricks for data and ML.",
+      label: "York University · 2023 – present",
+      title: "BSc Computer Science",
+      body: "Data structures and algorithms, database systems, software engineering and networks. GPA 8.15 / 9. React and Flutter certificates from Coursera along the way.",
+      learnings: [
+        { lead: "Build it, then improve it.", text: "A working first version teaches more than a perfect plan." },
+        { lead: "Accessibility is not extra.", text: "Keyboard, contrast and semantics from the first component." },
+        { lead: "Read the error message.", text: "It usually says exactly what is wrong." },
+      ],
     },
   ],
 } satisfies About;
 
 export const skillGroups = [
-  {
-    label: "Languages",
-    items: ["JavaScript (ES6+)", "TypeScript", "Python", "Java", "C", "C#", "Dart", "SQL", "Bash", "HTML5", "CSS3"],
-  },
-  {
-    label: "Libraries and frameworks",
-    items: [
-      "React",
-      "Next.js",
-      "Flutter",
-      "Node.js",
-      "Express",
-      "RESTful APIs",
-      "Stripe",
-      "ORM",
-      "Responsive UI",
-      "Accessibility",
-      "SEO",
-    ],
-  },
-  {
-    label: "Databases and cloud",
-    items: ["PostgreSQL", "Firebase", "AWS", "Azure DevOps", "Vercel"],
-  },
-  {
-    label: "Developer tools",
-    items: [
-      "Git / GitHub / GitLab",
-      "CI/CD",
-      "GitHub Actions",
-      "Playwright",
-      "Lighthouse",
-      "Jira",
-      "Figma",
-      "Contentful",
-      "Google Tag Manager",
-    ],
-  },
-  {
-    label: "AI tools",
-    items: [
-      "Claude",
-      "ChatGPT",
-      "Gemini",
-      "Codex",
-      "GitHub Copilot",
-      "Microsoft Copilot (custom agents)",
-      "Local AI (Ollama)",
-    ],
-  },
+  { label: "Languages", items: ["TypeScript", "JavaScript", "Python", "Java", "C#", "Dart", "SQL"] },
+  { label: "Frameworks", items: ["React", "Next.js", "Flutter", "Node.js", "Express"] },
+  { label: "Data and cloud", items: ["PostgreSQL", "Firebase", "AWS", "Azure DevOps", "Vercel"] },
+  { label: "Quality", items: ["Playwright", "Lighthouse", "GitHub Actions", "Accessibility audits"] },
 ] satisfies SkillGroup[];
 
 export const projects = [
@@ -130,6 +119,7 @@ export const projects = [
       "Contentful as headless CMS, deployed on AWS",
     ],
     stack: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Contentful", "AWS"],
+    links: { github: "https://github.com/ShivamGlotra/InUno-FE" },
   },
   {
     slug: "workout-app",

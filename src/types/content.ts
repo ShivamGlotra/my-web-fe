@@ -21,6 +21,8 @@ export type SiteSettings = {
   location: string;
   email: string;
   availability: { open: boolean; label: string };
+  /** "Where I've worked and studied" row. */
+  affiliations: string[];
   cvUrl: string;
   socialLinks: SocialLink[];
   footerTagline: string;
@@ -29,23 +31,37 @@ export type SiteSettings = {
 
 // ---------- Homepage sections ----------
 
-export type HeroStat = { value: string; label: string };
+// export type HeroStat = { value: string; label: string };
 
 export type Hero = {
+  eyebrow: string;
   headline: string;
   intro: string;
-  stats: HeroStat[];
+  /** Rendered in bold at the end of the intro. */
+  question: string;
   photo?: ImageAsset;
 };
 
-export type Service = { title: string; description: string };
+export type Principle = {
+  title: string;
+  description: string;
+  illustration?: ImageAsset;
+};
+
+export type AboutEntry = {
+  /** Small label, e.g. "York University · 2023 – present". */
+  label: string;
+  title: string;
+  body: string;
+  photo?: ImageAsset;
+  learnings?: { lead: string; text: string }[];
+};
 
 export type About = {
   lead: string;
   paragraphs: string[];
-  services: Service[];
+  timeline: AboutEntry[];
 };
-
 export type SkillGroup = {
   label: string;
   items: string[];
