@@ -1,11 +1,11 @@
 .container {
-  --gutter: clamp(1rem, 0.5rem + 2vw, 2rem);
-  --content-width: 75rem; // 1200px
+  --gutter: clamp(1.25rem, 0.5rem + 2.5vw, 2.5rem); // 20px - 40px
+  --content-width: 76.25rem; // 1220px
 
   width: 100%;
-  max-width: calc(var(--content-width) + 2 * var(--gutter));
+  max-width: calc(var(--content-width) + 2 * var(--gutter)); // 1220px + 2 * 40px
   margin-inline: auto;
-  padding-inline: var(--gutter);
+  padding-inline: var(--gutter); // 40px
 }
 
 .narrow {

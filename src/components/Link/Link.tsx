@@ -8,12 +8,13 @@ type LinkProps = {
   href: string;
   /** Open in a new tab with an external icon. Defaults to true for http(s) URLs. */
   external?: boolean;
+  variant?: "inline" | "arrow";
   children: ReactNode;
   className?: string;
 };
 
-export const Link = ({ href, external, children, className }: LinkProps) => {
-  const classes = [styles.link, className].filter(Boolean).join(" ");
+export const Link = ({ href, external, variant = "inline", children, className }: LinkProps) => {
+  const classes = [styles.link, styles[variant], className].filter(Boolean).join(" ");
   const opensInNewTab = external ?? isWebUrl(href);
 
   if (opensInNewTab) {
@@ -25,6 +26,12 @@ export const Link = ({ href, external, children, className }: LinkProps) => {
       </a>
     );
   }
+  const content = (
+    <>
+      {children}
+      {variant === "arrow" && <Icon name="arrowRight" className={styles.icon} />}
+    </>
+  );
 
   if (isAppFile(href)) {
     return (
@@ -37,7 +44,7 @@ export const Link = ({ href, external, children, className }: LinkProps) => {
   // For mailto: and other non-http(s) links, we just use a normal anchor tag without the external icon.
   return (
     <a href={href} className={classes}>
-      {children}
+      {content}
     </a>
   );
 };

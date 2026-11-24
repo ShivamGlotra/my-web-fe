@@ -1,9 +1,25 @@
 .section {
-  padding-block: clamp(4rem, 2.5rem + 5vw, 7rem);
+  padding-block: clamp(3.5rem, 2.5rem + 3vw, 5.5rem);
 }
 
-.tinted {
-  background-color: var(--bs-secondary-bg);
+.band {
+  background-color: var(--site-band);
+}
+
+.deep {
+  background-color: var(--site-deep);
+  color: var(--site-deep-text);
+
+  // Re-theme everything inside: components read these variables.
+  --bs-body-color: var(--site-deep-text);
+  --bs-secondary-color: var(--site-deep-muted);
+  --bs-border-color: var(--site-deep-line);
+  --bs-link-color: var(--site-deep-accent);
+  --bs-link-color-rgb: 169, 196, 147;
+  --site-line-strong: var(--site-deep-line);
+  --site-card: var(--site-deep-card);
+  --site-accent: var(--site-deep-accent);
+  --site-on-accent: var(--site-deep-on-accent);
 }
 
 .header {

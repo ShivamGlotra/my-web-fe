@@ -15,6 +15,7 @@ type WithTitleProps = BaseSectionProps & {
   title: string;
   // Rquired with a title, for anchor links and aria-labels
   id: string;
+  // Small label above the title, for example "About me" or "Projects"
   eyebrow?: string;
   intro?: ReactNode;
 };
@@ -22,6 +23,7 @@ type WithTitleProps = BaseSectionProps & {
 type WithoutTitleProps = BaseSectionProps & {
   title?: undefined;
   id?: string;
+  eyebrow?: undefined;
   intro?: undefined;
 };
 
