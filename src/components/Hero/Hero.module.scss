@@ -1,0 +1,70 @@
+.hero {
+  padding-block: clamp(2rem, 1rem + 3vw, 2.75rem) clamp(2.5rem, 1.5rem + 3vw, 3.5rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.media {
+  order: -1; // visually first, but after the text in the HTML
+}
+
+.content {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: start;
+}
+
+.titleGroup {
+  display: grid;
+  gap: 0.875rem;
+  margin: 0;
+}
+
+.intro {
+  max-width: 34em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.dot {
+  flex: none;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background-color: var(--site-accent);
+  // a gap ring, then a thin outer ring
+  box-shadow:
+    0 0 0 3px var(--bs-body-bg),
+    0 0 0 4px var(--site-line-strong);
+}
+
+@media (min-width: 64rem) {
+  .grid {
+    grid-template-columns: 29.375rem minmax(0, 1fr); // 470px photo column
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  // the two Buttons go full width; the resume link (last) stays inline
+  .actions > :not(:last-child) {
+    flex: 1 1 100%;
+  }
+}
