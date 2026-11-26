@@ -11,6 +11,7 @@ export type ImageAsset = {
 export type SocialLink = {
   label: string;
   href: string;
+  icon: "github" | "linkedin" | "twitter" | "email" | "discord";
 };
 
 // ---------- Site-wide ----------

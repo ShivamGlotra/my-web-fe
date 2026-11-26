@@ -26,8 +26,8 @@ export const siteSettings = {
   ],
   cvUrl: "/cv.pdf",
   socialLinks: [
-    { label: "GitHub", href: "https://github.com/ShivamGlotra" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/shivamglotra" },
+    { label: "GitHub", href: "https://github.com/ShivamGlotra", icon: "github" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/shivamglotra", icon: "linkedin" },
   ],
   footerTagline: "A Computer Science student building reliable, accessible software across web, mobile and backend.",
   seo: {

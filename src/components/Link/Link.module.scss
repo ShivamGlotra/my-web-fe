@@ -1,17 +1,15 @@
 .link {
   color: var(--bs-link-color);
+  font-weight: 600;
+  text-underline-offset: 0.25em;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.25em; // 4px
-  transition:
-    // color 0.15s ease,
-    text-decoration-thickness 0.15s ease;
+  transition: text-decoration-thickness 0.15s ease;
 }
 
 .inline {
-  text-decoration: underline;
+  text-decoration-line: underline;
 
   &:hover {
-    // color: var(--bs-link-hover-color);
     text-decoration-thickness: 2px;
   }
 }
@@ -26,6 +24,13 @@
   &:hover {
     text-decoration-line: underline;
   }
+}
+
+// Must come after .link: same specificity, so the later rule wins.
+.plain {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration-line: none;
 }
 
 .icon {
