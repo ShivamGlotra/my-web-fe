@@ -17,14 +17,7 @@ export const siteSettings = {
   location: "Toronto, Canada",
   email: "shivam.glotra.43@gmail.com",
   availability: { open: true, label: "Open to developer and co-op roles · Toronto or remote" },
-  affiliations: [
-    "goeasy",
-    "Soudelka Technologies",
-    "Connect2Network",
-    "York University",
-    "Sheridan College",
-    "Coursera",
-  ],
+  affiliations: ["goeasy", "Soudelka Technologies", "Connect2Network", "York University", "Sheridan College"],
   cvUrl: "/cv.pdf",
   socialLinks: [
     { label: "GitHub", href: "https://github.com/ShivamGlotra", icon: "github" },
@@ -44,6 +37,12 @@ export const hero = {
   intro:
     "Three developer roles since 2025 across web, mobile and backend. I work with React, Next.js, Node.js, Flutter and PostgreSQL, and I keep asking:",
   question: "what does this need to do reliably, for everyone, before it ships?",
+  photo: {
+    url: "",
+    alt: "Shivam Glotra smiling in front of a brick wall",
+    width: 470,
+    height: 470,
+  },
 } satisfies Hero;
 
 export const principles = [

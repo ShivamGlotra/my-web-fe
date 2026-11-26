@@ -1,5 +1,7 @@
-const Page = () => {
-  return <main className="container py-5"></main>;
+import { Hero } from "@/components/Hero/Hero";
+
+const HomePage = () => {
+  return <Hero />;
 };
 
-export default Page;
+export default HomePage;
