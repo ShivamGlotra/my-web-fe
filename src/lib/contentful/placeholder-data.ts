@@ -69,30 +69,119 @@ export const principles = [
 ] satisfies Principle[];
 
 export const about = {
+  heading: "About",
   lead: "I'm a third-year Computer Science student at York University in Toronto. I turn complex problems into working software, from web and mobile apps to backend systems and machine-learning pipelines.",
   paragraphs: [
     "Outside coursework I learn by building: side projects, self-paced courses and hackathons. Next, I'm working on system design, AWS and Azure certifications and open source.",
   ],
   timeline: [
     {
-      label: "Restaurant manager · 2020 – present",
+      id: "restaurant",
+      label: "Restaurant manager · Jan 2020 – Aug 2025",
       title: "Where I learned to lead a team",
-      body: "I led a 15-person team serving 100+ guests a day at Goa Farm Kitchen and VIBO, and improved efficiency by 10–15% through staffing and POS changes. It taught me to stay calm and communicate under pressure.",
+      body: "I led teams of up to 20 staff serving 200+ customers daily at Goa Farm Kitchen and VIBO, and raised team efficiency by 10–15% by resolving staffing and operational issues. It taught me to stay calm and communicate under pressure.",
+      learnings: [
+        { lead: "People first, process second.", text: "A rota that works for the team works for the guests too." },
+        { lead: "Calm is a skill.", text: "A busy service goes wrong fast if the person in charge panics." },
+        { lead: "Small fixes compound.", text: "A staffing tweak or a POS change can save hours every week." },
+      ],
+      photo: {
+        url: "",
+        alt: "Some Photo",
+        width: 470,
+        height: 470,
+      },
     },
     {
-      label: "Sheridan College · 2018 – 2019",
+      id: "sheridan",
+      label: "Sheridan College · Jan 2018 – Sep 2019",
       title: "Software Development Diploma",
-      body: "Java, JavaScript, C, C#, web programming and databases. GPA 3.76 / 4.",
+      body: "Information Technology – Software Development Diploma. Java, JavaScript, C, C#, web programming and databases. GPA 3.76 / 4.",
+      learnings: [
+        {
+          lead: "Fundamentals carry everywhere.",
+          text: "Java and C made every language after them easier to pick up.",
+        },
+        { lead: "Databases are the real backend.", text: "Most apps are just a good data model with a UI on top." },
+        { lead: "Ship the assignment.", text: "A finished project beats a clever one that never runs." },
+      ],
+      photo: {
+        url: "",
+        alt: "Some Photo",
+        width: 470,
+        height: 470,
+      },
     },
     {
-      label: "York University · 2023 – present",
+      id: "york",
+      label: "York University · Sep 2023 – Expected Apr 2028",
       title: "BSc Computer Science",
-      body: "Data structures and algorithms, database systems, software engineering and networks. GPA 8.15 / 9. React and Flutter certificates from Coursera along the way.",
+      body: "Data structures and algorithms, database systems, software engineering and networks. GPA 3.8 / 4. React and Flutter certificates from Coursera along the way.",
       learnings: [
         { lead: "Build it, then improve it.", text: "A working first version teaches more than a perfect plan." },
         { lead: "Accessibility is not extra.", text: "Keyboard, contrast and semantics from the first component." },
         { lead: "Read the error message.", text: "It usually says exactly what is wrong." },
       ],
+      photo: {
+        url: "",
+        alt: "Some Photo",
+        width: 470,
+        height: 470,
+      },
+    },
+    {
+      id: "soudelka",
+      label: "Soudelka Technologies · May 2025 – Aug 2025",
+      title: "Software Engineer Intern",
+      body: "Delivered 20+ RESTful APIs in Node.js powering 20–30 screens, integrated Firebase for data, auth and cloud functions, and closed ~40 tickets connecting APIs to the UI with unit tests.",
+      learnings: [
+        { lead: "Design the API before the code.", text: "A clear contract saves every team that consumes it." },
+        { lead: "Tests are part of the feature.", text: "Unit tests caught the bugs I would have shipped." },
+        { lead: "Reviews make you faster.", text: "A second pair of eyes finds the thing you stopped seeing." },
+      ],
+      photo: {
+        url: "",
+        alt: "Some Photo",
+        width: 470,
+        height: 470,
+      },
+    },
+    {
+      id: "goeasy",
+      label: "goeasy · Sep 2025 – Apr 2026",
+      title: "Software Engineer Intern",
+      body: "Closed ~50 tickets across 4 web apps in React, Next.js and TypeScript, cut regression testing from days to hours with 10+ Playwright tests, and built a Random Forest model in Databricks that assigned risk scores to 1M+ customers. Also built the app's first deep linking for 3 screens in Flutter and raised Lighthouse from 80 to 96.",
+      learnings: [
+        { lead: "Automate the boring checks.", text: "Playwright tests turned days of regression testing into hours." },
+        { lead: "Measure before you optimise.", text: "Lighthouse told me exactly where the 500 ms went." },
+        {
+          lead: "AI tools speed you up, not replace you.",
+          text: "AI-assisted workflows helped, but the judgement calls were still mine.",
+        },
+      ],
+      photo: {
+        url: "",
+        alt: "Some Photo",
+        width: 470,
+        height: 470,
+      },
+    },
+    {
+      id: "connect2network",
+      label: "Connect2Network · May 2026 – Jun 2026",
+      title: "Software Engineer · Contract",
+      body: "Closed ~30 tickets and shipped full-stack features in 1 month with Next.js, React and Node.js, built a Stripe subscription flow linked to PostgreSQL, and supported AWS deployments and production troubleshooting.",
+      learnings: [
+        { lead: "Small team, fast shipping.", text: "Five people and a clear backlog can out-ship a big team." },
+        { lead: "Payments have to be right.", text: "A Stripe flow has no room for almost-correct." },
+        { lead: "Fix it before launch blocks.", text: "Production troubleshooting is mostly preparation." },
+      ],
+      photo: {
+        url: "",
+        alt: "Some Photo",
+        width: 470,
+        height: 470,
+      },
     },
   ],
 } satisfies About;

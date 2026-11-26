@@ -1,0 +1,31 @@
+.toolkit {
+  margin-top: clamp(2rem, 1.5rem + 2vw, 2.5rem);
+}
+
+.groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 2rem;
+  margin: 0;
+}
+
+.group {
+  display: grid;
+  gap: 0.5rem;
+
+  dt {
+    font-weight: normal;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--bs-secondary-color);
+  }
+}
+
+@media (min-width: 64rem) {
+  .groups {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

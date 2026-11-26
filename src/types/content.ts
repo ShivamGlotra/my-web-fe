@@ -58,9 +58,11 @@ export type AboutEntry = {
   body: string;
   photo?: ImageAsset;
   learnings?: { lead: string; text: string }[];
+  id: string;
 };
 
 export type About = {
+  heading: string;
   lead: string;
   paragraphs: string[];
   timeline: AboutEntry[];
