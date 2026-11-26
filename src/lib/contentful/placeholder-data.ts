@@ -11,7 +11,8 @@ import type {
 } from "@/types/content";
 
 export const siteSettings = {
-  name: "Shivam Glotra",
+  firstName: "Shivam",
+  lastName: "Glotra",
   role: "Computer Science student · Full-stack developer",
   location: "Toronto, Canada",
   email: "shivam.glotra.43@gmail.com",
