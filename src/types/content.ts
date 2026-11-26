@@ -58,9 +58,11 @@ export type AboutEntry = {
   body: string;
   photo?: ImageAsset;
   learnings?: { lead: string; text: string }[];
+  id: string;
 };
 
 export type About = {
+  heading: string;
   lead: string;
   paragraphs: string[];
   timeline: AboutEntry[];
@@ -106,29 +108,6 @@ export type Experience = {
   /** "background" is the smaller card for non-developer roles. */
   kind: "developer" | "background";
 };
-
-type EducationBase = {
-  id: string;
-  title: string;
-  institution: string;
-};
-
-export type Degree = EducationBase & {
-  kind: "degree";
-  location: string;
-  start: YearMonth;
-  end: YearMonth | null;
-  gpa?: string;
-  coursework: string[];
-};
-
-export type Certification = EducationBase & {
-  kind: "certification";
-  date: YearMonth;
-  url?: string;
-};
-
-export type EducationItem = Degree | Certification;
 
 export type ContactContent = {
   title: string;

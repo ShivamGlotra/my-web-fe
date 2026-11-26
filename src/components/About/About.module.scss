@@ -1,0 +1,6 @@
+.intro {
+  display: grid;
+  gap: 1rem;
+  max-width: 44rem;
+  margin-bottom: clamp(2rem, 1.5rem + 2vw, 2.5rem);
+}

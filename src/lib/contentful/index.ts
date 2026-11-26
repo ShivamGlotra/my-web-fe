@@ -2,7 +2,6 @@ import "server-only";
 import type {
   About,
   ContactContent,
-  EducationItem,
   Experience,
   Hero,
   Principle,
@@ -35,10 +34,6 @@ export const getProjects = async (): Promise<Project[]> => {
 
 export const getExperiences = async (): Promise<Experience[]> => {
   return data.experience;
-};
-
-export const getEducation = async (): Promise<EducationItem[]> => {
-  return data.education;
 };
 
 export const getContactContent = async (): Promise<ContactContent> => {
