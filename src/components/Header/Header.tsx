@@ -47,9 +47,9 @@ export const Header = async () => {
               </li>
             ))}
           </ul>
+          <ThemeToggle />
+          <MobileMenu navItems={NAV_ITEMS} contactLinks={contacts} />
         </div>
-        <ThemeToggle />
-        <MobileMenu navItems={NAV_ITEMS} contactLinks={contacts} />
       </Container>
     </header>
   );
