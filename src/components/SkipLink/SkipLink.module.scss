@@ -1,0 +1,21 @@
+.skip {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 200;
+  transform: translateY(-200%);
+
+  &:focus-within {
+    transform: none;
+  }
+
+  a {
+    display: inline-block;
+    padding: 0.625rem 1rem;
+    background-color: var(--bs-body-color);
+    color: var(--bs-body-bg);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--bs-border-radius);
+  }
+}

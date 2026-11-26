@@ -1,10 +1,7 @@
-// Passing href would turn the button into a link and not passing it would make it a normal button.
-// This is useful for buttons that are used to navigate to other pages.
-
 import NextLink from "next/link";
-import type { MouseEventHandler, ReactNode } from "react";
-import { Icon, type IconName } from "../Icon";
-import { isWebUrl, isAppFile } from "@/lib/links";
+import type { MouseEventHandler, ReactNode, Ref } from "react";
+import { Icon, type IconName } from "@/components/Icon";
+import { isAppFile, isWebUrl } from "@/lib/links";
 import styles from "./Button.module.scss";
 
 type BaseProps = {
@@ -16,35 +13,41 @@ type BaseProps = {
   children: ReactNode;
 };
 
-type ButtonAsButtonProps = BaseProps & {
-  href?: never;
-  type?: "button" | "submit" | "reset";
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-  disabled?: boolean;
-  loading?: boolean;
-};
-
-type ButtonAsLinkProps = BaseProps & {
+type ButtonAsLink = BaseProps & {
   href: string;
   external?: boolean;
   download?: boolean;
 };
 
-export type ButtonProps = ButtonAsButtonProps | ButtonAsLinkProps;
+type ButtonAsButton = BaseProps & {
+  href?: undefined;
+  type?: "button" | "submit" | "reset";
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
+  loading?: boolean;
+  /** Access the real <button>, e.g. to move focus back to it. */
+  ref?: Ref<HTMLButtonElement>;
+  /** For buttons that show and hide something. */
+  "aria-expanded"?: boolean;
+  "aria-controls"?: string;
+};
 
-const VARIANT_CLASSES = {
+export type ButtonProps = ButtonAsLink | ButtonAsButton;
+
+const VARIANT_CLASS = {
   primary: "btn-primary",
   secondary: "btn-secondary",
   tertiary: "btn-tertiary",
-};
+} as const;
 
 export const Button = (props: ButtonProps) => {
   const { variant = "primary", size = "md", iconStart, iconEnd, className, children } = props;
 
-  const classes = ["btn", VARIANT_CLASSES[variant], size === "sm" && "btn-sm", styles.button, className]
+  const classes = ["btn", VARIANT_CLASS[variant], size === "sm" && "btn-sm", styles.button, className]
     .filter(Boolean)
     .join(" ");
 
+  // ----- Link version -----
   if (typeof props.href === "string") {
     if (props.href.trim() === "") {
       throw new Error("Button href cannot be empty string");
@@ -57,6 +60,7 @@ export const Button = (props: ButtonProps) => {
         {iconEnd && <Icon name={iconEnd} />}
       </>
     );
+
     if (external ?? isWebUrl(href)) {
       return (
         <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
@@ -73,6 +77,7 @@ export const Button = (props: ButtonProps) => {
         </NextLink>
       );
     }
+
     return (
       <a href={href} className={classes} download={download || undefined}>
         {content}
@@ -80,10 +85,28 @@ export const Button = (props: ButtonProps) => {
     );
   }
 
-  const { type = "button", onClick, disabled = false, loading = false } = props;
+  // ----- Button version -----
+  const {
+    type = "button",
+    onClick,
+    disabled = false,
+    loading = false,
+    ref,
+    "aria-expanded": ariaExpanded,
+    "aria-controls": ariaControls,
+  } = props;
 
   return (
-    <button type={type} onClick={onClick} disabled={disabled || loading} aria-busy={loading} className={classes}>
+    <button
+      ref={ref}
+      type={type}
+      className={classes}
+      onClick={onClick}
+      disabled={disabled || loading}
+      aria-busy={loading || undefined}
+      aria-expanded={ariaExpanded}
+      aria-controls={ariaControls}
+    >
       {loading ? <span className={styles.spinner} aria-hidden="true" /> : iconStart && <Icon name={iconStart} />}
       <span>{children}</span>
       {!loading && iconEnd && <Icon name={iconEnd} />}

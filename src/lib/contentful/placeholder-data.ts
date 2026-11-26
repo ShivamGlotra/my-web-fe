@@ -11,7 +11,8 @@ import type {
 } from "@/types/content";
 
 export const siteSettings = {
-  name: "Shivam Glotra",
+  firstName: "Shivam",
+  lastName: "Glotra",
   role: "Computer Science student · Full-stack developer",
   location: "Toronto, Canada",
   email: "shivam.glotra.43@gmail.com",
@@ -26,8 +27,8 @@ export const siteSettings = {
   ],
   cvUrl: "/cv.pdf",
   socialLinks: [
-    { label: "GitHub", href: "https://github.com/ShivamGlotra" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/shivamglotra" },
+    { label: "GitHub", href: "https://github.com/ShivamGlotra", icon: "github" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/shivamglotra", icon: "linkedin" },
   ],
   footerTagline: "A Computer Science student building reliable, accessible software across web, mobile and backend.",
   seo: {

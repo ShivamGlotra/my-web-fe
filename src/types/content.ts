@@ -11,12 +11,15 @@ export type ImageAsset = {
 export type SocialLink = {
   label: string;
   href: string;
+  icon: "github" | "linkedin";
 };
 
 // ---------- Site-wide ----------
 
 export type SiteSettings = {
-  name: string;
+  firstName: string;
+  middleName?: string;
+  lastName: string;
   role: string;
   location: string;
   email: string;
