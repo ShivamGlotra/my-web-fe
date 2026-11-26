@@ -109,29 +109,6 @@ export type Experience = {
   kind: "developer" | "background";
 };
 
-type EducationBase = {
-  id: string;
-  title: string;
-  institution: string;
-};
-
-export type Degree = EducationBase & {
-  kind: "degree";
-  location: string;
-  start: YearMonth;
-  end: YearMonth | null;
-  gpa?: string;
-  coursework: string[];
-};
-
-export type Certification = EducationBase & {
-  kind: "certification";
-  date: YearMonth;
-  url?: string;
-};
-
-export type EducationItem = Degree | Certification;
-
 export type ContactContent = {
   title: string;
   body: string;

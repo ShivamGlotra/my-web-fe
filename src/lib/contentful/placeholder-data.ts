@@ -1,7 +1,6 @@
 import type {
   About,
   ContactContent,
-  EducationItem,
   Experience,
   Hero,
   Project,
@@ -372,53 +371,6 @@ export const experience = [
     stack: [],
   },
 ] satisfies Experience[];
-
-export const education = [
-  {
-    id: "york",
-    kind: "degree",
-    title: "Bachelor of Science, Computer Science",
-    institution: "York University",
-    location: "North York, ON",
-    start: "2023-09",
-    end: null,
-    gpa: "3.8",
-    coursework: [
-      "Java",
-      "Python",
-      "C",
-      "Data Structures & Algorithms",
-      "Database Systems",
-      "Software Engineering",
-      "Computer Networks",
-    ],
-  },
-  {
-    id: "sheridan",
-    kind: "degree",
-    title: "Software Development Diploma",
-    institution: "Sheridan College",
-    location: "Brampton, ON",
-    start: "2018-01",
-    end: "2019-09",
-    gpa: "3.76",
-    coursework: ["Java", "JavaScript", "C", "C#", "Web Programming", "Database Systems", "Computer Architecture"],
-  },
-  {
-    id: "react-coursera",
-    kind: "certification",
-    title: "React",
-    institution: "Coursera",
-    date: "2025-09",
-  },
-  {
-    id: "flutter-coursera",
-    kind: "certification",
-    title: "Flutter",
-    institution: "Coursera",
-    date: "2025-09",
-  },
-] satisfies EducationItem[];
 
 export const contact = {
   title: "Let's work together",
