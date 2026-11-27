@@ -18,7 +18,7 @@ export const Header = async () => {
   ];
 
   return (
-    <header id="top" className={styles.header}>
+    <header className={styles.header}>
       <Container className={styles.inner}>
         <Link href="/" variant="plain" className={styles.brand}>
           {firstName} {middleName && `${middleName} `} <em>{lastName}</em>
