@@ -1,4 +1,4 @@
-import type { ProjectCategory, ProjectStatus, YearMonth } from "@/types/content";
+import type { ProjectCategory, ProjectStatus, YearMonth, Project } from "@/types/content";
 
 export const CATEGORY_LABELS: Record<ProjectCategory, string> = {
   web: "Web app",
@@ -41,11 +41,20 @@ export const PROJECT_GROUP_LABEL: Record<ProjectGroup, string> = {
 };
 
 /** ("2025-06", "2026-04") → "10 months". Finished roles only. */
-export function formatDuration(start: YearMonth, end: YearMonth): string {
+export const formatDuration = (start: YearMonth, end: YearMonth): string => {
   const [sy, sm] = start.split("-").map(Number);
   const [ey, em] = end.split("-").map(Number);
   const months = (ey - sy) * 12 + (em - sm);
   if (months < 12) return `${months} ${months === 1 ? "month" : "months"}`;
   const years = Math.floor(months / 12);
   return `${years} ${years === 1 ? "year" : "years"}`;
-}
+};
+
+export const PROJECT_GROUP_ORDER: ProjectGroup[] = ["fullstack", "other"];
+
+export const formatProjectMeta = (project: Project): string => {
+  const when =
+    project.status === "completed" && project.date ? formatYearMonth(project.date) : STATUS_LABELS[project.status];
+
+  return [CATEGORY_LABELS[project.category], when, project.stat].filter(Boolean).join(" · ");
+};
