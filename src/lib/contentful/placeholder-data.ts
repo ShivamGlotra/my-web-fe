@@ -46,24 +46,59 @@ export const hero = {
 
 export const principles = [
   {
+    id: "problem-first",
     title: "Start with the problem, not the stack",
     description: "Ask who it is for and what has to be true when it works, before choosing tools.",
+    illustration: {
+      url: "/images/howIwork/problem-first.svg",
+      alt: "Some Illustration",
+      width: 470,
+      height: 470,
+    },
   },
   {
+    id: "components",
     title: "Build from reusable components",
     description: "Small, typed building blocks so features ship faster and stay consistent.",
+    illustration: {
+      url: "/images/howIwork/reusable-components.svg",
+      alt: "Some Illustration",
+      width: 470,
+      height: 470,
+    },
   },
   {
+    id: "testing",
     title: "Test the paths people rely on",
     description: "End-to-end tests with mocked APIs, so a release does not depend on luck.",
+    illustration: {
+      url: "/images/howIwork/test-paths.svg",
+      alt: "Some Illustration",
+      width: 470,
+      height: 470,
+    },
   },
   {
+    id: "measure",
     title: "Measure before optimising",
     description: "Lighthouse before and after a change. Fix what the numbers show.",
+    illustration: {
+      url: "/images/howIwork/measure.svg",
+      alt: "Some Illustration",
+      width: 470,
+      height: 470,
+    },
   },
   {
+    id: "communicate",
     title: "Communicate early and often",
     description: "Restaurant floors taught me: say what is blocked before it becomes a problem.",
+    illustration: {
+      url: "/images/howIwork/communicate.svg",
+      alt: "Some Illustration",
+      width: 470,
+      height: 470,
+    },
   },
 ] satisfies Principle[];
 

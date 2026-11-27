@@ -46,11 +46,12 @@ export type Hero = {
 };
 
 export type Principle = {
+  /** Stable and unique, e.g. "testing". */
+  id: string;
   title: string;
   description: string;
   illustration?: ImageAsset;
 };
-
 export type AboutEntry = {
   /** Small label, e.g. "York University · 2023 – present". */
   label: string;
