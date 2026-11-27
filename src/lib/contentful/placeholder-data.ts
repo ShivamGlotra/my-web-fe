@@ -234,7 +234,6 @@ export const projects = [
     category: "web",
     status: "in-progress",
     stat: "29 commits",
-    featured: true,
     summary: "A full-stack store with REST APIs, PostgreSQL and a Contentful-managed catalogue.",
     highlights: [
       "Reusable Next.js and TypeScript components",
@@ -262,6 +261,7 @@ export const projects = [
     slug: "pdf-scanner-app",
     title: "PDF Scanner App",
     category: "mobile",
+    featured: true,
     status: "completed",
     date: "2025-11",
     summary: "Document scanner with image capture, processing and PDF generation.",
@@ -273,6 +273,7 @@ export const projects = [
     title: "Employment Data Analyzer",
     category: "ml",
     status: "completed",
+    featured: true,
     date: "2026-05",
     summary: "Uses machine learning to read Excel files and pay stubs and generate risk reports.",
     highlights: [
@@ -287,6 +288,7 @@ export const projects = [
     title: "Full-Stack Portfolio Website",
     category: "web",
     status: "completed",
+    featured: true,
     date: "2026-01",
     summary: "Responsive portfolio on Next.js and React, with Firebase for auth, data and hosting.",
     highlights: [
@@ -306,14 +308,15 @@ export const projects = [
     stack: ["Flutter", "Firebase", "Node.js", "Express"],
   },
   {
-    slug: "ai-meal-finder",
-    title: "AI Meal Finder",
+    slug: "smart-recipe",
+    title: "Smart Recipe",
     category: "desktop",
     status: "completed",
     date: "2025-06",
+    featured: true,
     summary: "Recommends meals from dietary preferences and ingredients using AI.",
     highlights: ["Recommends meals from dietary preferences", "Ingredient-based AI suggestions"],
-    stack: ["C#", ".NET", "AI", "Python"],
+    stack: ["Java", "JavaFX", "Gemini AI API", "Local Ollama LLM", "Java Maven"],
   },
   {
     slug: "banking-e-commerce-app",
